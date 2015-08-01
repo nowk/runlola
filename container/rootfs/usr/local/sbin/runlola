@@ -27,7 +27,7 @@ done
 adduser ${shell:+"-s $shell"} -g "" -D $user
 
 # add to sudoers
-if [[ sudo ]] ; then
+if [[ "$sudo" == true ]] ; then
     echo "%$user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 fi
 
