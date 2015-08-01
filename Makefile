@@ -1,6 +1,6 @@
 
 build:
-	actool build --overwrite src runlola-v1.0.0-linux-amd64.aci
+	actool build --overwrite container runlola-v1.0.0-linux-amd64.aci
 
 install: build
 	sudo rkt --insecure-skip-verify fetch runlola-v1.0.0-linux-amd64.aci \
