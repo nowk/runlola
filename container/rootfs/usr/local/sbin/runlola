@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo=false
+sudoer=false
 
 # get the renamed of the flags
 for arg in "$@" ; do
@@ -12,8 +12,8 @@ for arg in "$@" ; do
         shell="${arg#*=}"
         shift
         ;;
-        --sudo)
-        sudo=true
+        --sudoer)
+        sudoer=true
         shift
         ;;
         *)
@@ -27,7 +27,7 @@ done
 adduser ${shell:+"-s $shell"} -g "" -D $user
 
 # add to sudoers
-if [[ "$sudo" == true ]] ; then
+if [[ "$sudoer" == true ]] ; then
     echo "%$user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 fi
 
