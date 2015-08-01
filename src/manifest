@@ -1,0 +1,25 @@
+{
+    "acKind": "ImageManifest",
+    "acVersion": "0.5.1",
+    "annotations": [
+        {
+            "name": "author",
+            "value": "Yung Hwa Kwon <yung.kwon@damncarousel.com>"
+        }
+    ],
+    "labels": [
+        {
+            "name": "version",
+            "value": "v1.0.0"
+        },
+        {
+            "name": "os",
+            "value": "linux"
+        },
+        {
+            "name": "arch",
+            "value": "amd64"
+        }
+    ],
+    "name": "nowk/runlola"
+}

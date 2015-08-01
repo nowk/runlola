@@ -1,0 +1,39 @@
+#!/bin/bash
+sudo=false
+
+# get the renamed of the flags
+for arg in "$@" ; do
+    case $arg in
+        -u=*|--user=*)
+        user="${arg#*=}"
+        shift
+        ;;
+        -s=*|--shell=*)
+        shell="${arg#*=}"
+        shift
+        ;;
+        --sudo)
+        sudo=true
+        shift
+        ;;
+        *)
+            # unknown arg
+        ;;
+    esac
+done
+# TODO var checking
+
+# add user
+adduser ${shell:+"-s $shell"} -g "" -D $user
+
+# add to sudoers
+if [[ sudo ]] ; then
+    echo "%$user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+fi
+
+if [[ -n "$shell" ]] ; then
+    shell=/bin/bash
+fi
+
+# run the cmd as user
+su $user -m -s $shell -c "$*"
