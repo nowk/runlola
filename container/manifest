@@ -3,7 +3,7 @@
     "acVersion": "0.5.1",
     "annotations": [
         {
-            "name": "author",
+            "name": "authors",
             "value": "Yung Hwa Kwon <yung.kwon@damncarousel.com>"
         }
     ],
