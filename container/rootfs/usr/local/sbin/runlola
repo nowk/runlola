@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 sudoer=false
 
 # get the renamed of the flags
@@ -32,7 +32,7 @@ if [[ "$sudoer" == true ]] ; then
 fi
 
 if [[ -n "$shell" ]] ; then
-    shell=/bin/bash
+    shell=/bin/sh
 fi
 
 # run the cmd as user
